@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+
+	_ "example16-init-func/bar"
+	_ "example16-init-func/foo"
+)
+
+var global = convert()
+
+func convert() int {
+	return 100
+}
+
+func init() {
+	global = 0
+}
+
+func main() {
+	fmt.Println("global is", global)
+}
